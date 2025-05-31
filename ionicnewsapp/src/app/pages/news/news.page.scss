@@ -1,21 +1,82 @@
+/* Searchbar estilizada */
 ion-searchbar {
-  --background: #e0e0e0;
-  --color: #000;
-  border-radius: 12px;
-  margin: 10px;
+  --background: #f4f4f4;
+  --color: #333;
+  --placeholder-color: #888;
+  --icon-color: #69C399;
+  border-radius: 16px;
+  margin: 12px 16px;
+  padding: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+.btn-out{
+  color:red;
+}
+ion-searchbar:focus-within {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
+/* Toolbar com cor suave e translúcida */
 ion-toolbar {
-  --background: #69c399;
+  --background: rgba(105, 195, 153, 0);
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Imagem com bordas arredondadas */
 ion-img {
-  border-radius: 10px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
+ion-img:hover {
+  transform: scale(1.02);
+}
+
+/* Item com visual de card */
 ion-item {
-  --background: #fff;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  --background: #ffffff;
+  margin: 10px 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+ion-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+ion-title{
+  color:#ffffff
+}
+.btn-info{
+  color: rgb(13, 61, 120);
+  font-size: 18px;
+  font-weight: 500;
+}
+.btn-more {
+  color: rgb(13, 61, 120);
+}
+.manchete-pequena {
+  img {
+    height: 250px;
+    width: 50%;  /* altura menor */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+  }
+
+  ion-card-header {
+    padding: 8px 16px;
+  }
+
+  ion-card-title {
+    font-size: 1.2rem; /* título um pouco menor */
+  }
+
+  ion-card-content {
+    padding: 4px 16px 12px;
+  }
 }
