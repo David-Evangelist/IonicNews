@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService, NewsApiResponse, Article } from '../../services/news.service';
-import { IonicModule } from '@ionic/angular';
+import {
+  NewsService,
+  NewsApiResponse,
+  Article,
+} from '../../services/news.service';
 
 @Component({
-  selector: 'app-info',
-  templateUrl: './info.page.html',
-  styleUrls: ['./info.page.scss'],
-  imports: [IonicModule],
+  selector: 'app-news',
+  templateUrl: './news.page.html',
+  styleUrls: ['./news.page.scss'],
+  standalone: false,
 })
-export class InfoPage implements OnInit {
-
-  noticias: Array<{ titulo: string; imagem: string; link: string }> = [];
-
+export class NewsPage implements OnInit {
   constructor(private newsService: NewsService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.loadNews();
   }
+
+  noticias: Array<{ titulo: string; imagem: string; link: string }> = [];
 
   loadNews(): void {
     this.newsService.getAppleNews().subscribe({
@@ -24,12 +26,12 @@ export class InfoPage implements OnInit {
         this.noticias = data.articles.map((article: Article) => ({
           titulo: article.title,
           imagem: article.urlToImage ?? '',
-          link: article.url
+          link: article.url,
         }));
       },
       error: (err) => {
         console.error('Erro ao carregar notícias:', err);
-      }
+      },
     });
   }
 

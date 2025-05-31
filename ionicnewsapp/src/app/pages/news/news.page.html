@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Notícias Apple</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let noticia of noticias" (click)="abrirLink(noticia.link)">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="noticia.imagem"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ noticia.titulo }}</h2>
+        <p><ion-text color="primary">Ver mais...</ion-text></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-note *ngIf="noticias.length === 0" class="ion-text-center">
+    Nenhuma notícia encontrada.
+  </ion-note>
+</ion-content>

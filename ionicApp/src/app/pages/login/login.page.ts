@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, RouterModule],
   templateUrl: './login.page.html',
-  styleUrls: ['login.page.scss']
+  styleUrls: ['login.page.scss'],
 })
 export class LoginPage {
   email: string = '';
@@ -17,6 +17,5 @@ export class LoginPage {
 
   login() {
     console.log('Login com:', this.email, this.senha);
-   
   }
 }
