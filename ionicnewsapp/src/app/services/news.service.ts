@@ -32,8 +32,9 @@ export class NewsService {
 
   constructor(private http: HttpClient) {}
 
-  getAppleNews(): Observable<NewsApiResponse> {
-    const url = `https://newsapi.org/v2/everything?q=apple&sortBy=popularity&apiKey=${this.apiKey}`;
-    return this.http.get<NewsApiResponse>(url);
-  }
+ getAppleNews(): Observable<NewsApiResponse> {
+  const url = `https://newsapi.org/v2/everything?q=apple&sortBy=popularity&language=pt&apiKey=${this.apiKey}`;
+  return this.http.get<NewsApiResponse>(url);
+}
+
 }

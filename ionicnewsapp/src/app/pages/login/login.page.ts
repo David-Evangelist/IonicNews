@@ -10,19 +10,19 @@ import { Router } from '@angular/router';
 export class LoginPage {
   email: string = '';
   senha: string = '';
- nome: string = '';
+  usuario: string = '';
+
   constructor(private router: Router) {}
 
   login() {
-    if (this.nome && this.email && this.senha) {
-   
-      localStorage.setItem('usuarioNome', this.nome);
-      localStorage.setItem('usuarioEmail', this.email);
-
+    
+    if (this.usuario && this.email && this.senha) {
+     
+      localStorage.setItem('usuario', this.usuario);
+    
       this.router.navigateByUrl('/news');
     } else {
-      alert('Por favor, preencha todos os campos.');
+      alert('Preencha todos os campos');
     }
   }
 }
-
