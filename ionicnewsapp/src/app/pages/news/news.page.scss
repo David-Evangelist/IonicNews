@@ -24,8 +24,13 @@ ion-toolbar {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+ion-title{
+ background-color: #ffffff;
 
-/* Imagem com bordas arredondadas */
+}
+p{
+  color: #000000;
+}
 ion-img {
   border-radius: 12px;
   object-fit: cover;
