@@ -66,6 +66,12 @@ git push origin minha-feature
 Nosso fluxo de trabalho utiliza branches específicas para desenvolvimento e produção. 
 Veja detalhes em [CONTRIBUTING.md](/CONTRIBUTING.md).
 
+## 📎 Documentos relacionados
+
+- [Tutorial de Fluxo de Trabalho (Git)](./ionicnewsdocs/Fluxo/Tutorial-de-Fluxo-Git.pdf)
+- [Definição de Ferramentas e Instalação](./ionicnewsdocs/Fluxo/Definição-de-Ferramentas-e-Dependências.pdf)
+- [Diagrama do Fluxo de Trabalho](./ionicnewsdocs/Fluxo/Diagrama_Fluxo.png)
+
 ## 🖼️ Imagens do Projeto
 
 

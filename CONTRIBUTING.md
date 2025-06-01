@@ -136,6 +136,13 @@ git push origin feature/nome-da-feature
 - Armazenamento: Local Storage ou SQLite
 <!-- - Autenticação: Firebase ou JWT -->
 
+
+## 📎 Documentos relacionados
+
+- [Tutorial de Fluxo de Trabalho (Git)](./ionicnewsdocs/Fluxo/Tutorial-de-Fluxo-Git.pdf)
+- [Definição de Ferramentas e Instalação](./ionicnewsdocs/Fluxo/Definição-de-Ferramentas-e-Dependências.pdf)
+- [Diagrama do Fluxo de Trabalho](./ionicnewsdocs/Fluxo/Diagrama_Fluxo.png)
+
 <br>
 
 ## 🤝 Obrigado!
