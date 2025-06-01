@@ -10,13 +10,23 @@
 <ion-content *ngIf="noticia.titulo">
   <ion-card>
     <img [src]="noticia.imagem" alt="Imagem da notícia" />
+
     <ion-card-header>
       <ion-card-title>{{ noticia.titulo }}</ion-card-title>
-      <ion-card-subtitle>{{ noticia.categoria }}</ion-card-subtitle>
+      <ion-card-subtitle>
+        {{ noticia.categoria }}<br />
+        <small>
+          Por {{ noticia.autor }} em {{ noticia.dataPublicacao |
+          date:'dd/MM/yyyy HH:mm' }}
+        </small>
+      </ion-card-subtitle>
     </ion-card-header>
+
     <ion-card-content>
       <p>{{ noticia.descricao }}</p>
-      <ion-button expand="block" (click)="abrirLinkOriginal()">Abrir notícia completa</ion-button>
+      <ion-button expand="block" (click)="abrirLinkOriginal()">
+        Abrir notícia completa
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
