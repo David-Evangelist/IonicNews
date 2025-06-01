@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title ><p>Bem-vindo, {{ usuario }} </p></ion-title>
+    <ion-title><p>Bem-vindo, {{ usuario }}</p></ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="abrirFavoritos()">
         <ion-icon name="heart" slot="icon-only"></ion-icon>
@@ -13,8 +13,6 @@
 </ion-header>
 
 <ion-content>
-
-  <!-- Filtros de Categoria -->
   <ion-list>
     <ion-list-header>
       <ion-label>Filtrar por categoria</ion-label>
@@ -24,37 +22,47 @@
         <ion-checkbox
           slot="start"
           [checked]="categoriasSelecionadas.includes(categoria)"
-          (ionChange)="toggleCategoria(categoria)">
+          (ionChange)="toggleCategoria(categoria)"
+        >
         </ion-checkbox>
         <ion-label>{{ categoria }}</ion-label>
       </ion-item>
     </div>
   </ion-list>
 
-  <!-- Manchete Principal -->
   <ion-card *ngIf="manchete">
     <img [src]="manchete.imagem" alt="Imagem da manchete" />
     <ion-card-header>
       <ion-card-title>{{ manchete.titulo }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-button expand="block" (click)="abrirDetalhes(manchete)">Ler Notícia</ion-button>
+      <p>Autor: {{ manchete.autor || 'Desconhecido' }}</p>
+      <p>Data: {{ manchete.dataPublicacao | date: 'short' }}</p>
+      <ion-button expand="block" (click)="abrirDetalhes(manchete)"
+        >Ler Notícia</ion-button
+      >
     </ion-card-content>
   </ion-card>
 
-  <!-- Lista de Notícias -->
   <ion-list>
     <ion-item *ngFor="let noticia of noticias" (click)="abrirDetalhes(noticia)">
       <ion-thumbnail slot="start">
         <img [src]="noticia.imagem" alt="Imagem da notícia" />
       </ion-thumbnail>
       <ion-label class="ion-text-wrap">
-        {{ noticia.titulo }}
+        <h2>{{ noticia.titulo }}</h2>
+        <p>Autor: {{ noticia.autor || 'Desconhecido' }}</p>
+        <p>Data: {{ noticia.dataPublicacao | date: 'short' }}</p>
       </ion-label>
-      <ion-button fill="clear" slot="end" (click)="toggleFavorito(noticia); $event.stopPropagation()">
-        <ion-icon [name]="noticia.favorito ? 'heart' : 'heart-outline'"></ion-icon>
+      <ion-button
+        fill="clear"
+        slot="end"
+        (click)="toggleFavorito(noticia); $event.stopPropagation()"
+      >
+        <ion-icon
+          [name]="noticia.favorito ? 'heart' : 'heart-outline'"
+        ></ion-icon>
       </ion-button>
     </ion-item>
   </ion-list>
-
 </ion-content>

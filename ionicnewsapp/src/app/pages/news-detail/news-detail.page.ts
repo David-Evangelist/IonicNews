@@ -13,18 +13,22 @@ export class NewsDetailPage implements OnInit {
     imagem: '',
     descricao: '',
     link: '',
-    categoria: ''
+    categoria: '',
+    autor: '',
+    dataPublicacao: '',
   };
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       this.noticia.titulo = params['titulo'] || '';
       this.noticia.imagem = params['imagem'] || '';
       this.noticia.descricao = params['descricao'] || '';
       this.noticia.link = params['link'] || '';
       this.noticia.categoria = params['categoria'] || '';
+      this.noticia.autor = params['autor'] || 'Desconhecido';
+      this.noticia.dataPublicacao = params['dataPublicacao'] || '';
     });
   }
 
