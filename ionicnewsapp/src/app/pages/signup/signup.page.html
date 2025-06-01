@@ -1,0 +1,26 @@
+<ion-content fullscreen class="ion-padding" style="--background: url('../../assets/img/pexels-kaboompics-6335.jpg') no-repeat center center / cover;">
+  <div class="overlay"></div>
+
+  <div class="signup-container">
+    <form (ngSubmit)="submit()" class="signup-form">
+      <h2>Cadastro</h2>
+
+      <ion-item class="custom-bg">
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="nome" name="nome" required></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-bg">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-bg">
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="senha" name="senha" required></ion-input>
+      </ion-item>
+
+      <ion-button routerLink="/login" expand="block" type="submit">Cadastrar</ion-button>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Favoritos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/news"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="favoritos.length > 0; else nenhumFavorito">
+    <ion-item *ngFor="let noticia of favoritos" lines="full">
+      <ion-thumbnail slot="start">
+        <img [src]="noticia.imagem" alt="Imagem da notícia" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ noticia.titulo }}</h2>
+        <p>{{ noticia.categoria }}</p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button fill="clear" (click)="abrirDetalhes(noticia)">
+          <ion-icon name="open-outline"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" color="danger" (click)="removerFavorito(noticia.link)">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+
+  <ng-template #nenhumFavorito>
+    <ion-text color="medium">
+      <p class="ion-padding">Nenhuma notícia favoritada.</p>
+    </ion-text>
+  </ng-template>
+</ion-content>

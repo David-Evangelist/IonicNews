@@ -1,0 +1,28 @@
+<ion-content fullscreen class="ion-padding" style="--background: url('../../assets/img/pexels-kaboompics-6335.jpg') no-repeat center center / cover;">
+  <div class="overlay"></div>
+
+  <div class="login-container">
+    <form (ngSubmit)="login()" class="login-form">
+      <h2>Login</h2>
+
+      <ion-item class="custom-bg">
+        <ion-label position="floating">Nome de usuário</ion-label>
+        <ion-input type="text" [(ngModel)]="usuario" name="usuario" required></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-bg">
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+      </ion-item>
+
+      <ion-item class="custom-bg">
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="senha" name="senha" required></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" type="submit">
+        Entrar
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,146 @@
+/* Título */
+ion-title {
+  color: white !important;
+}
+
+/* Container geral */
+.signup-container {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.67);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.signup-form h2 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 1rem;
+}
+
+/* Overlay escurecido */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Estilo dos campos */
+ion-item.input-item {
+  --background-color: transparent;
+  padding-inline: 14px;
+  height: 56px;
+  align-items: center;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  --highlight-background: transparent;
+}
+
+ion-item.custom-bg {
+  --background: rgba(79, 101, 94, 0);
+  border-radius: 52px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  padding-inline: 14px;
+  height: 56px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+ion-item.custom-bg:focus-within {
+  --background: rgba(79, 101, 94, 0);
+}
+
+ion-label {
+  color: #ffffff !important;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, font-size 0.2s ease;
+}
+
+ion-input {
+  color: #ffffff !important;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+  min-width: 0;
+}
+
+ion-item::part(native) {
+  border-bottom: none !important;
+}
+
+ion-button {
+  --background: #4f655ebd;
+  --border-radius: 20px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Cabeçalho */
+ion-header ion-toolbar {
+  --background: #4F655E;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 480px) {
+  form {
+    padding: 1.5rem 1rem;
+  }
+
+  ion-label {
+    font-size: 12px;
+    transition: transform 0.2s ease, font-size 0.2s ease;
+    color: white;
+    margin-top: -12px;
+  }
+
+  ion-item:focus-within ion-label,
+  ion-input.sc-ion-input-has-focus + ion-label,
+  ion-input:not(:placeholder-shown) + ion-label {
+    transform: translateY(18px) scale(0.75);
+    font-size:16px;
+    color: white;
+  }
+
+  ion-input {
+    font-size: 1rem;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  ion-item.custom-bg {
+    padding-inline: 10px;
+    height: 50px;
+    width: 100%;
+  }
+
+  ion-item.input-item {
+    padding-inline: 10px;
+    height: 50px;
+  }
+
+  ion-button {
+    font-size: 1.1rem;
+    height: 50px;
+  }
+}
